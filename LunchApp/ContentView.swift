@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var currentDate = Date()
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         NavigationView {
@@ -18,7 +20,10 @@ struct ContentView: View {
                 }
                 
                 Section{
-                    Text("Current Time: ")
+                    Text("Current Time: \(currentDate)")
+                        .onReceive(timer) { input in
+                            self.currentDate = input
+                        }
                     Text("Time Allowed In: ")
                 }
                 
