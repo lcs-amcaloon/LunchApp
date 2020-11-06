@@ -9,10 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Form{
+                Section{
+                    Text("Student: ")
+                }
+                
+                Section{
+                    Text("Current Time: ")
+                    Text("Time Allowed In: ")
+                }
+                
+                Section(header: Text("User Picture")){
+                    Image("guest-user")
+                        .resizable()
+                        .scaledToFit()
+                }
+            }
+            .navigationBarTitle("LunchTime")
+        }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
