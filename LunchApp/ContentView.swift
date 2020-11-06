@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         NavigationView {
             Form{
                 Section{
                     Text("Student: ")
+                        .background(Color.red)
                 }
                 
                 Section{
